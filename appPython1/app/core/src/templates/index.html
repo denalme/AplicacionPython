@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+<!-- variables de entorno html -->
+{% block titulo %}SAV{% endblock %}
+
+{% block contenido %}
+    {% load static %}
+
+    <input type="checkbox" id="btn-menu">
+    <label for="btn-menu"><img src="assets/img/iconmenu.png" align=""></label>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#sobre-nosotros">Sobre SAV</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#objetivos">Objetivo</a></li>
+            <li><a href="#equipo">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="inicio-header">
+        <img src="assets/img/inicio.jpg" alt="" >
+        <div class="texto-encima">Sistema de Gestión Virtual de Aprendices</div>
+    </section>
+    <section class="contenedor sobre-nosotros" id="sobre-nosotros">
+        <h2 class="titulo">Sobre SAV</h2>
+        <div class="contenedor-sobre-nosotros">
+            <img src="assets/img/sav.png" alt="" class="imagen-sobre">
+            <div class="contenido-textos">
+                <h3><span>1</span>SENA</h3>
+                <p>SAV será un aplicativo web dirigido al área de contrato de aprendizaje del SENA, este ayudará a los trabajadores de esta área a organizar una base de datos con información de aprendices que cuentan o no con una alternativa para la etapa productiva; con este aplicativo se podrá ver la información en conjunto como programa de Formación y/o ficha como también la información de un aprendiz en particular lo que brindará un apoyo más rápido y eficaz para la búsqueda de tal información a los usuarios.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="caracteristicas" id="caracteristicas">
+        <div class="contenedor">
+            <h2 class="titulo">Características</h2>
+            <div class="caracteristicas-cont">
+                <div class="caracteristicas-ind">
+                    <img src="assets/img/eficaz.svg" alt="">
+                    <h3>Eficaz</h3>
+                    <p>Adaptado para una buena búsqueda de la información.</p>
+                </div>
+                <div class="caracteristicas-ind">
+                    <img src="assets/img/seguro.svg" alt="">
+                    <h3>Seguro</h3>
+                    <p>Cuida la información de cada uno de los usuarios permitiendo que sea un sitio web confiable.</p>
+                </div>
+                <div class="caracteristicas-ind">
+                    <img src="assets/img/orden.svg" alt="">
+                    <h3>Organizado</h3>
+                    <p>Diseño sencillo y modelado para una mayor facilidad de uso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="objetivos contenedor" id="objetivos">
+        <h2 class="titulo">Objetivo</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/img/funciones.svg" alt="">
+                <div class="contenido-texto-card">
+                    <p>Permitir administrar la información y la gestión documental pertinente a los procesos de seguimiento de alternativas al Contrato de Aprendizaje, tanto en la fase lectiva como en la fase productiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<section class="equipo" id="equipo">{% url 'nosotros' %}</section>
+
+<section class="contacto" id="contacto">{% url 'contacto' %}</section>
+
+
+
+</main>
+<footer class="footer">
+    <div class="contenedor-footer">
+        <h4>&copy; SENA 2020 </h4>
+    </div>
+    <h2 class="titulo-final">&copy; Denisse Alejandra Alzate Meneses | Sergio León Saldarriaga Dávila | Laura Vanessa Agudelo Arias</h2>
+</footer>
+
+{% endblock %}

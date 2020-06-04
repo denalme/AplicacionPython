@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    {% load static %}
+
+<div class="conteformu">
+    <h1>¡CONTÁCTANOS!</h1>
+      <div class="contenidoformu">
+        <div class="info">
+
+          <div class="col">
+            <i class="icono fas fa-map-marker-alt"></i>
+            <p>Carrera 68 #104, Complejo Norte, Medellín, Antioquia</p>
+          </div>
+
+          <div class="col">
+            <i class="icono fas fa-envelope-open-text"></i>
+            <p>sav_sena@correo.com</p>
+          </div>
+
+          <div class="col">
+            <i class="icono fas fa-phone-volume"></i>
+            <p>3148867898</p>
+          </div>
+          
+
+        </div>
+        <form action="" method="POST" class="formulario">
+            {% csrf_token %}
+             {{ formulario.usuario }} 
+             {{ formulario.correo }}
+             {{ formulario.tipomsj }}
+             {{ formulario.mensaje }}
+             <span>
+               {% if "ok" in request.GET %}
+                <span class="alert">Hemos recibido tu mensaje</span>
+               {% endif %}
+             </span>
+          <button type="button">Enviar</button>
+
+        </form>
+      </div>
+  </div>
+
+{% endblock %}
