@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block titulo %} PRESENTACIÓN | SAV {% endblock %}
+
+{% block contenido %}
+  {% load static %}
+
+<header>
+  <input type="checkbox" id="btn-menu">
+  <label for="btn-menu"><img src="{% static 'assets/media/img/iconmenu.png' %}" ></label>
+  <nav class="menu">
+      <ul>
+          <li><a href="{% url 'index' %}">{{ btn1 }}</a></li>
+          <li><a href="{% url 'nosotros' %}">{{ btn2 }}</a></li>
+          <li><a href="{% url 'contacto' %}">{{ btn3 }}</a></li>
+          <li><a href="#">{{ btn4 }}</a></li>
+      </ul>
+  </nav>
+</header>
+<main>
+    <section class="inicio-header">
+        <img src="{% static 'assets/media/img/inicio.jpg' %}" alt="" >
+        <div class="texto-encima">{{ txt1 }}</div>
+    </section>
+    <section class="contenedor sobre-esquema" id="sobre-esquema">
+        <h2 class="titulo">{{ tituloUno }}</h2>
+        <div class="sobre-esquema">
+            <img src="{% static 'assets/media/img/esquemaBD.png' %}" alt="" class="imagen-esquema">
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="contenedor-footer">
+        <h4>&copy; {{ txt2 }}</h4>
+    </div>
+    <h2 class="titulo-final">&copy; {{ txt3 }}</h2>
+</footer>
+
+{% endblock %}

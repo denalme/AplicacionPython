@@ -1,45 +1,76 @@
 {% extends 'base.html' %}
+{% block titulo %} CONTACTO | SAV {% endblock %}
 
 {% block contenido %}
-    {% load static %}
+  {% load static %}
 
-<div class="conteformu">
-    <h1>¡CONTÁCTANOS!</h1>
-      <div class="contenidoformu">
-        <div class="info">
+<header>
+  <input type="checkbox" id="btn-menu">
+  <label for="btn-menu"><img src="{% static 'assets/media/img/iconmenu.png' %}" ></label>
+  <nav class="menu">
+      <ul>
+          <li><a href="{% url 'index' %}">{{ btn1 }}</a></li>
+          <li><a href="{% url 'nosotros' %}">{{ btn2 }}</a></li>
+          <li><a href="#">{{ btn3 }}</a></li>
+          <li><a href="{% url 'presentacion' %}">{{ btn4 }}</a></li>
+      </ul>
+  </nav>
+</header>
+<main>
+    <section class="inicio-header">
+        <img src="{% static 'assets/media/img/inicio.jpg' %}" alt="" >
+        <div class="texto-encima">{{ txt1 }}</div>
+      </section>
+    <section class="contacto" id="contacto">
+        <div class="conteformu">
+          <h1>{{ tituloContacto}}</h1>
+            <div class="contenidoformu">
+              <div class="info">
+                <div class="col">
+                  <i class="icono fas fa-map-marker-alt"></i>
+                  <p>{{ txt2 }}</p>
+                </div>
 
-          <div class="col">
-            <i class="icono fas fa-map-marker-alt"></i>
-            <p>Carrera 68 #104, Complejo Norte, Medellín, Antioquia</p>
-          </div>
+                <div class="col">
+                  <i class="icono fas fa-envelope-open-text"></i>
+                  <p>{{ txt3 }}</p>
+                </div>
 
-          <div class="col">
-            <i class="icono fas fa-envelope-open-text"></i>
-            <p>sav_sena@correo.com</p>
-          </div>
-
-          <div class="col">
-            <i class="icono fas fa-phone-volume"></i>
-            <p>3148867898</p>
-          </div>
-          
-
+                <div class="col">
+                  <i class="icono fas fa-phone-volume"></i>
+                  <p>{{ txt4 }}</p>
+                </div>
+              </div>
+            <!-- <form action="" method="POST" class="formulario">
+                {% csrf_token %}
+                {{formulario.as_p}}
+              <button type="submit" name="smdmsj">{{btn8}}</button>
+            </form>-->
+              <form action="" method="POST" class="formulario">
+                {% csrf_token %}
+                 {{ formulario.usuario }} 
+                 {{ formulario.correo }}
+                 {{ formulario.tipomsj }}
+                 {{ formulario.mensaje }}
+                <span>
+                  {% if "ok" in request.GET %}
+                    <span class="alert">Hemos recibido tu mensaje</span>
+                  {% endif %}
+                  {% if "fail" in request.GET %}
+                    <span class="alert">No se puede enviar tu mensaje</span>
+                  {% endif %}
+                </span>
+                <button type="submit">{{ btn8 }}</button>
+              </form>
+            </div>
         </div>
-        <form action="" method="POST" class="formulario">
-            {% csrf_token %}
-             {{ formulario.usuario }} 
-             {{ formulario.correo }}
-             {{ formulario.tipomsj }}
-             {{ formulario.mensaje }}
-             <span>
-               {% if "ok" in request.GET %}
-                <span class="alert">Hemos recibido tu mensaje</span>
-               {% endif %}
-             </span>
-          <button type="button">Enviar</button>
-
-        </form>
-      </div>
-  </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="contenedor-footer">
+        <h4>&copy; {{ txt5 }}</h4>
+    </div>
+    <h2 class="titulo-final">&copy; {{ txt6 }}</h2>
+</footer>
 
 {% endblock %}
