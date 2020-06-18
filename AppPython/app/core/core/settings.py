@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 #Ruta para llegar a los archivos media
-MEDIA_ROOT = os.path.join(BASE_DIR, "src/assets/media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "src/static/assets/media/")
 
 CKEDITOR_CONFIGS = {
     'default':{
